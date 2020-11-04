@@ -26,7 +26,7 @@ Enkele voordelen hiervan zijn:
 - meer overzicht over welke labels voor welk polisblad bestemd zijn vanuit de data bestanden
 - minder condities nodig in het opbouwen van de polis
   - minder vast te leggen in het bestand zelf
-  - minder code nodig voor het verwerken
+  - minder code nodig voor het verwerken (kleine impact)
   - versimpeld automatisch testen
 
 Enkele nadelen hiervan zijn:
@@ -34,3 +34,17 @@ Enkele nadelen hiervan zijn:
 - meer dubbel werk m.b.t. labels die veel voor komen voor meerdere maatschappijen (grote impact)
 - denkwijze losgekoppeld van functioneel ontwerp
   - 1 wijziging in het functioneel ontwerp zorgt voor meerdere wijzigingen in meerdere data bestanden
+
+## Optie B
+Optie B splits bestanden op per hoofdbranche/branche. Een voorbeeld is 
+[hier](https://github.com/BSBVolmachten/nedasco-polis-demo/blob/main/src/b/05000/05011.json) te vinden.
+
+Enkele voordelen hiervan zijn:
+- significant minder dubbel werk m.b.t. het wijzigen van labels per polisblad
+- minder bestanden dus minder onderhoud aan data
+- denkwijzige FO nagenoeg 1 op 1 terug te vinden in data bestanden
+
+Enkele nadelen hiervan zijn:
+- complexere code nodig om het bestand te verwerken (kleine impact)
+- extra complexiteit bij logica wijzigingen (indien direct in het data bestand)
+- enkele fouten zijn uitsluitend per branche te herkennen, en niet verder te specificeren naar maatschappij
