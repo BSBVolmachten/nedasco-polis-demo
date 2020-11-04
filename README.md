@@ -1,5 +1,6 @@
 # Demonstratief Nedasco Polis Project
 
+## Voorbeeld tabel
 De volgende tabel is een voorbeeld van een functioneel ontwerp van een bodyblok van een polis. De 'regel template' is
 weg gelaten.
 
@@ -17,8 +18,9 @@ weg gelaten.
 |                     | 10694                   | Omschrijving              | Links     | verwijderen       | x    |      |      |
 
 
-## Optie A
+## Opties voor data
 
+#### Optie A
 Optie A splits bestanden op per hoofdbranche/branche/maatschappij. Een voorbeeld is 
 [hier](https://github.com/BSBVolmachten/nedasco-polis-demo/blob/main/src/b/05000/05011.json) te vinden.
 
@@ -35,7 +37,7 @@ Enkele nadelen hiervan zijn:
 - denkwijze losgekoppeld van functioneel ontwerp
   - 1 wijziging in het functioneel ontwerp zorgt voor meerdere wijzigingen in meerdere data bestanden
 
-## Optie B
+#### Optie B
 Optie B splits bestanden op per hoofdbranche/branche. Een voorbeeld is 
 [hier](https://github.com/BSBVolmachten/nedasco-polis-demo/blob/main/src/b/05000/05011.json) te vinden.
 
@@ -48,3 +50,9 @@ Enkele nadelen hiervan zijn:
 - complexere code nodig om het bestand te verwerken (kleine impact)
 - extra complexiteit bij logica wijzigingen (indien direct in het data bestand)
 - enkele fouten zijn uitsluitend per branche te herkennen, en niet verder te specificeren naar maatschappij
+
+
+## Omzetting
+Voor beide opties is het nog steeds mogelijk om uit een functioneel ontwerp van de bodyblokken een data bestand te
+genereren. Het is is voor optie A wel iets meer werk gezien de data bestanden niet in denkwijze overeen komen met het
+functioneel ontwerp.
