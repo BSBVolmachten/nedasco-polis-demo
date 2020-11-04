@@ -1,0 +1,17 @@
+[
+  {
+    "omschrijving": "Soort verzekering",
+    "inhoud": "${10142o}",
+    "vereiste_labels": [],
+    "type": "standaard"
+  },
+  {
+    "omschrijving": "Eigen risico",
+    "extra_omschrijving": "Vrijwillig",
+    "inhoud": "${10043}",
+    "vereiste_labels": [
+      "10043"
+    ],
+    "type": "bedrag-met-tekst"
+  }
+]

@@ -12,13 +12,5 @@
       "10708"
     ],
     "type": "standaard"
-  },
-  {
-    "omschrijving": "Gezinssamenstelling",
-    "inhoud": "${10694o}",
-    "vereiste_labels": [
-      "10694o"
-    ],
-    "type": "standaard"
   }
 ]

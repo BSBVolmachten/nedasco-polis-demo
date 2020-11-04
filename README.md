@@ -11,8 +11,8 @@ weg gelaten.
 |                     | 10708                   |                           | Links     | verwijderen       | x    | x    |      |
 |                     | 10710                   | Getal exclusief decimalen | Links     | niet verwijderen  | x    | x    |      |
 |                     | 10711                   |                           | Links     | niet verwijderen  | x    | x    |      |
-| Eigen risico        | € 10043 Vrijwillig      |                           |           |                   |      |      |      |
-|                     | 10043                   | Getal inclusief decimalen | Links     | verwijderen       |      |      |      |
+| Eigen risico        | € 10043 Vrijwillig      |                           |           |                   |      |      | x    |
+|                     | 10043                   | Getal inclusief decimalen | Links     | verwijderen       |      |      | x    |
 | Gezinssamenstelling | 10694                   |                           |           |                   | x    |      |      |
 |                     | 10694                   | Omschrijving              | Links     | verwijderen       | x    |      |      |
 
