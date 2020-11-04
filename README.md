@@ -1,3 +1,8 @@
+# Demonstratief Nedasco Polis Project
+
+De volgende tabel is een voorbeeld van een functioneel ontwerp van een bodyblok van een polis. De 'regel template' is
+weg gelaten.
+
 | omschrijving        | inhoud                  | weergave                  | uitlijnen | regel verwijderen | P311 | P368 | P375 |
 |---------------------|-------------------------|---------------------------|-----------|-------------------|------|------|------|
 | Soort verzekering   | 10142                   |                           |           |                   | x    | x    | x    |
