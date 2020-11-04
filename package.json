@@ -1,0 +1,19 @@
+{
+  "name": "nedasco-polis-demo",
+  "version": "1.0.0",
+  "description": "Demonstratief project voor nedasco polissen",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "ts-jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BSBVolmachten/nedasco-polis-demo.git"
+  },
+  "author": "Jelte Dirks <j.dirks@outlook.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BSBVolmachten/nedasco-polis-demo/issues"
+  },
+  "homepage": "https://github.com/BSBVolmachten/nedasco-polis-demo#readme"
+}
