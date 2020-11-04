@@ -1,48 +1,50 @@
-[
-  {
-    "omschrijving": "Soort verzekering",
-    "inhoud": "${10142o}",
-    "vereiste_labels": [],
-    "type": "standaard",
-    "maatschappijen": [
-      "P311",
-      "P368",
-      "P375"
-    ]
-  },
-  {
-    "omschrijving": "Risico adres",
-    "inhoud": "${10708} ${10710} ${10711}",
-    "vereiste_labels": [
-      "10708"
-    ],
-    "type": "standaard",
-    "maatschappijen": [
-      "P311",
-      "P368"
-    ]
-  },
-  {
-    "omschrijving": "Eigen risico",
-    "extra_omschrijving": "Vrijwillig",
-    "inhoud": "${10043}",
-    "vereiste_labels": [
-      "10043"
-    ],
-    "type": "bedrag-met-tekst",
-    "maatschappijen": [
-      "P375"
-    ]
-  },
-  {
-    "omschrijving": "Gezinssamenstelling",
-    "inhoud": "${10694o}",
-    "vereiste_labels": [
-      "10694o"
-    ],
-    "type": "standaard",
-    "maatschappijen": [
-      "P311"
-    ]
-  }
-]
+{
+  "labels": [
+    {
+      "omschrijving": "Soort verzekering",
+      "inhoud": "${10142o}",
+      "vereiste_labels": [],
+      "type": "standaard",
+      "maatschappijen": [
+        "P311",
+        "P368",
+        "P375"
+      ]
+    },
+    {
+      "omschrijving": "Risico adres",
+      "inhoud": "${10708} ${10710} ${10711}",
+      "vereiste_labels": [
+        "10708"
+      ],
+      "type": "standaard",
+      "maatschappijen": [
+        "P311",
+        "P368"
+      ]
+    },
+    {
+      "omschrijving": "Eigen risico",
+      "extra_omschrijving": "Vrijwillig",
+      "inhoud": "${10043}",
+      "vereiste_labels": [
+        "10043"
+      ],
+      "type": "bedrag-met-tekst",
+      "maatschappijen": [
+        "P375"
+      ]
+    },
+    {
+      "omschrijving": "Gezinssamenstelling",
+      "inhoud": "${10694o}",
+      "vereiste_labels": [
+        "10694o"
+      ],
+      "type": "standaard",
+      "maatschappijen": [
+        "P311"
+      ]
+    }
+  ]
+}

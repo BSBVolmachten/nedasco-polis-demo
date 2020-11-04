@@ -1,16 +1,18 @@
-[
-  {
-    "omschrijving": "Soort verzekering",
-    "inhoud": "${10142o}",
-    "vereiste_labels": [],
-    "type": "standaard"
-  },
-  {
-    "omschrijving": "Risico adres",
-    "inhoud": "${10708} ${10710} ${10711}",
-    "vereiste_labels": [
-      "10708"
-    ],
-    "type": "standaard"
-  }
-]
+{
+  "labels": [
+    {
+      "omschrijving": "Soort verzekering",
+      "inhoud": "${10142o}",
+      "vereiste_labels": [],
+      "type": "standaard"
+    },
+    {
+      "omschrijving": "Risico adres",
+      "inhoud": "${10708} ${10710} ${10711}",
+      "vereiste_labels": [
+        "10708"
+      ],
+      "type": "standaard"
+    }
+  ]
+}
