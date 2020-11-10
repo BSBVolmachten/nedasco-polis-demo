@@ -1,0 +1,22 @@
+{
+  "labels": [
+    {
+      "header": {
+        "rijen": []
+      },
+      "tabel": {
+        "rijen": [
+          {
+            "vereiste_labels": [],
+            "cellen": {
+              "inhoud": "${10142"
+            }
+          }
+        ]
+      },
+      "footer": {
+        "rijen": []
+      }
+    }
+  ]
+}

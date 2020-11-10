@@ -1,13 +1,15 @@
 # Demonstratief Nedasco Polis Project
 
 
-## Het label / regel Object
-Het label / regel object wordt naar verwachting opgenomen in databestanden die in JSON zijn genoteerd. JSON staat voor
+De data bestanden
+---
+De data wordt hoogst waarschijnlijk in JSON bestanden opgeslagen. JSON staat voor
 javascript object notation en is een vrij eenvoudige manier van gestructureerd data op te slaan. Het is tegenwoordig 
 de standaard op het web en wordt dus ook door alles en iedereen ondersteund. Voordat er verder gelezen wordt is het
 sterk aangeraden om eerst de basis van JSON door te nemen op [deze website](https://developers.squarespace.com/what-is-json).
 Gezien het feit dat veel uitleg over JSON niet geschreven is voor lezers zonder technische achtergrond volgt er nu een
-hoofdstuk waarin kort uitgelegd wordt wat JSON nu eigenlijk is zonder al te veel technische termen.
+hoofdstuk waarin kort uitgelegd wordt wat JSON nu eigenlijk is zonder al te veel technische termen. Als je de link 
+gelezen hebt en het is al helemaal duidelijk, dan kan het JSON onderdeel overgeslagen worden, maar dat hoeft natuurlijk niet.
 
 #### JSON
 Javascript(JS) Object Notation, ofwel JSON is een databestand dat een gestructureerde notatie aanhoudt welke overeen komt
@@ -132,10 +134,60 @@ En een object met 1 property, genaamd 'key' met als waarde een nieuw (leeg) obje
   "key": {}
 }
 ```
-En bij deze hebben we de kracht van JSON meteen te pakken, nameelijk: de combinatie van lijsten en object, die weer in
-andere lijsten en objecten staan.
+En bij deze hebben we de kracht van JSON meteen te pakken, namelijk: de combinatie van lijsten en object, die weer in
+andere lijsten en objecten staan. Een ingewikkeld voorbeeld hiervan is bijvoorbeeld:
+```json
+{
+  "array": [
+    "dit is een string",
+    {
+      "waarde": 10.2,
+      "lijst": ["een", "lijst", "met", "woorden"]
+    },
+    false,
+    ["dit is een string in een lijst in een lijst", { "property": "dit is de (string) waarde van een property in een object in een lijst in een lijst" } ]
+  ]
+}
+```
+Dat ziet er ingewikkeld uit, en dat is het ook... helemaal niet nodig! Maar het demonstreert precies
+waarom JSON zo mooi is om mee te werken. Bij Excel is het vaak erg eenzijdig (met data opslaan), je hebt rijen en kolommen, daar moet je het
+mee doen. Bij JSON daarentegen is het mogelijk om de data precies te structureren zoals jij het wil, als er maar een 
+duidelijke beschrijving is van hoe de data genoteerd moet worden. Zelfs rijen en kolommen kunnen op meerdere manieren
+efficient in JSON opgenomen worden. Dit gaan we gedeeltelijk zien in het polis project. 
 
+
+De denkwijze / structuur
 ---
+Bij een polis is er gezocht naar de opsplitsing in een zo klein mogelijk item wat samenhangt, en onafhankelijk van 
+andere items leeft op zo'n polis. Hier kwamen we al snel uit op regels. 
+
+Voor de goede orde: bij bsb heet dit van oudsher 
+Label omdat dit vanuit een basis label opgebouwd en uitgebreid is (dus niet vanuit ANVA), 'regel' beschrijft beter wat het
+inhoudt, en wordt ook in ANVA terminologie gebruikt bij het moment van afdrukken. Een regel kan ook meerdere labels
+bevatten, dit kan voor verwarring zorgen... excuses hiervoor.
+
+Een regel staat vaak los van andere regels, en kan hierdoor ook goed als losse entiteit behandeld worden. Een regel
+heeft vaak een omschrijving, zoals bijvoorbeeld: 'Soort verzekering', en een waarde, zoals bijvoorbeeld: het label 10142.
+Op de polis wordt getoond:
+```text
+Soort verzekering           : Personenauto
+```
+en in ANVA staat:
+```text
+Soort verzekering           : ^ 
+```
+Het hoedje staat voor label 10142, weergave: omschrijving, regel verwijderen indien leeg. Hier wordt al duidelijk, 
+als je enige informatie weg haalt, dan klopt de regel niet meer. Alleen 'Soort verzekering' is niet genoeg voor het
+omschrijven van deze regel. Zo ook het toevoegen van informatie is eigenlijk overbodig. Stel dat er een regel toegevoegd
+wordt:
+```text
+Soort verzekering           : ^ 
+Gezinssamenstelling         : ^
+```
+Hier is een nieuwe regel toegevoegd, maar deze nieuwe regel zegt eigenlijk helemaal niks over de eerste regel. Ze zullen
+ook los van elkaar aangepast, en ook los van elkaar gecontroleerd worden. Ze horen in het geheel wel bij elkaar op de
+polis te komen, maar als losse entiteit kunnen we ze beter gescheiden houden.
+
 
 ```json
   {
@@ -201,3 +253,15 @@ Enkele nadelen hiervan zijn:
 Voor beide opties is het nog steeds mogelijk om uit een functioneel ontwerp van de bodyblokken een data bestand te
 genereren. Het is is voor optie A wel iets meer werk gezien de data bestanden niet in denkwijze en structuur overeen 
 komen met het functioneel ontwerp.
+
+Problem?
+---
+
+###Aanhalingstekens
+Hey, ik wil aanhalingstekens in mijn tekst zetten, maar JSON denkt dat ik een string wil sluiten. Hoe kan ik dit oplossen?
+Heel makkelijk, zet een backslash voor de dubbele aanhalingstekens en het werkt weer!
+```json
+{
+  "waarde": "Deze zin heeft \"aanhalingstekens\", werkt prima!"
+}
+```
