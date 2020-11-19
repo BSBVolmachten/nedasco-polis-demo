@@ -188,15 +188,43 @@ Hier is een nieuwe regel toegevoegd, maar deze nieuwe regel zegt eigenlijk helem
 ook los van elkaar aangepast, en ook los van elkaar gecontroleerd worden. Ze horen in het geheel wel bij elkaar op de
 polis te komen, maar als losse entiteit kunnen we ze beter gescheiden houden.
 
+Hier een voorbeeld van hoe dit in het functioneel ontwerp uit ziet:
+
+| omschrijving        | inhoud             | weergave                  | uitlijnen | regel verwijderen | regel template                                  | P311
+|---------------------|--------------------|---------------------------|-----------|-------------------|-------------------------------------------------|------
+| Soort verzekering   | 10142              |                           |           |                   | 02 Soort verzekering         10142              | x    
+|                     | 10142              | Omschrijving              | Links     | niet verwijderen  |                                                 | x    
+
+Er wordt hier beschreven wat de tekstuele omschrijving is van deze regel, welk label er in zit en enkele voorwaarden. Dit
+kan natuurlijk ook netjes in JSON, zie hier een voorbeeld:
 
 ```json
   {
     "omschrijving": "Soort verzekering",
     "inhoud": "${10142o}",
     "vereiste_labels": [],
-    "type": "standaard"
+    "type": "standaard",
+    "maatschappij": ["P311"]
   }
 ```
+Hoewel het meeste voor zichzelf spreekt, ook een enkele uitschieter: 
+- wat zijn 'vereiste labels', 
+- wat is het type
+- waarom staan er accolades om het label, en 
+- waarom staat er een o achter het label. 
+
+Dit is als volgt te verklaren.
+- de vereiste labels zijn de labels die nodig zijn om de regel op papier te zetten. zijn de labels niet aanwezig of leeg,
+dan wordt deze regel niet op het papier gedrukt
+- er staan accolades om het label om aan te geven dat dit een label nummer is zoals dat in ANVA voor komt, en dit vervangen
+moet worden met de waarde van dat label, bijvoorbeeld 'Personenauto'
+- de o achter het label zegt ons dat dit een coderingslabel is, en dat we de weergave 'Omschrijving' van dit label willen
+gebruiken.
+
+Alle eigenschappen hebben een eigen onderdeel in de handleiding, en dus ook regel type. Voor uitleg over 'type', check
+het desbetreffende onderdeel.
+
+
 
 ## Voorbeeld tabel fuctioneel ontwerp bodyblock
 De volgende tabel is een voorbeeld van een functioneel ontwerp van een bodyblok van een polis. De 'regel template' is
@@ -257,7 +285,7 @@ komen met het functioneel ontwerp.
 Problem?
 ---
 
-###Aanhalingstekens
+### Aanhalingstekens
 Hey, ik wil aanhalingstekens in mijn tekst zetten, maar JSON denkt dat ik een string wil sluiten. Hoe kan ik dit oplossen?
 Heel makkelijk, zet een backslash voor de dubbele aanhalingstekens en het werkt weer!
 ```json
