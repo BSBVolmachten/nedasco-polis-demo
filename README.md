@@ -249,6 +249,17 @@ weg gelaten.
 Optie A splits bestanden op per hoofdbranche/branche/maatschappij. Een voorbeeld is 
 [hier](https://github.com/BSBVolmachten/nedasco-polis-demo/blob/main/src/b/05000/05011.json) te vinden.
 
+```text
+05000/
+  05011/
+    P380.json
+    P381.json
+06000/
+  06030/
+    P380.json
+    P381.json
+```
+
 Enkele voordelen hiervan zijn:
 - meer overzicht over welke labels voor welk polisblad bestemd zijn vanuit de data bestanden
 - minder condities nodig in het opbouwen van de polis
@@ -266,6 +277,12 @@ Enkele nadelen hiervan zijn:
 Optie B splits bestanden op per hoofdbranche/branche. Een voorbeeld is 
 [hier](https://github.com/BSBVolmachten/nedasco-polis-demo/blob/main/src/b/05000/05011.json) te vinden.
 
+```text
+05000/
+  05011.json
+06000/
+  06030.json
+```
 Enkele voordelen hiervan zijn:
 - significant minder dubbel werk m.b.t. het wijzigen van labels per polisblad
 - minder bestanden dus minder onderhoud aan data
